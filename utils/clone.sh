@@ -1,1 +1,1 @@
-git clone git@github.com:GuilleSF/puppys.git
+git clone git@github.com:GuilleSF/puppies.git
