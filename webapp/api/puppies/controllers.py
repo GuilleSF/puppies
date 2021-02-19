@@ -27,6 +27,6 @@ class PuppiesApi(Resource):
 	def get(self):
 		return{
 				'info': 'This is an API for dogs breed categorization.',
-				'help': 'Use in terminal: curl -X POST -F \"image=@/path_to_image_dog/image.jpg\" localhot/api/breed',
+				'help': 'Use in terminal: curl -X POST -F \"image=@/path_to_image_dog/image.jpg\" localhost/api/breed',
 			}
 
