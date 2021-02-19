@@ -19,3 +19,9 @@ else
 fi
 cd ..
 pip install -r requirements.txt
+
+echo --------------------
+echo env variables
+echo --------------------
+export FLASK_APP=main.py
+APP_SETTINGS="config.DevelopmentConfig"
