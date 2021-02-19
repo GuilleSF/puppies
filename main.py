@@ -1,7 +1,7 @@
 import os
-from api import create_app
+from webapp import create_app
 
-env = os.environ.['APP_SETTING']
+env = os.environ['APP_SETTINGS']
 app = create_app(env)
 
 if __name__ == '__main__':
