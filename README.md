@@ -61,7 +61,7 @@ redis-server
 In other terminal
 
 ```
-python3.9 worker 
+python3.9 worker.py
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
@@ -74,14 +74,13 @@ curl -X POST -F \"image=@/path_to_image_dog/image.jpg\" localhost/api/breed
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Simple test, manually using the terminal
 
 ### Break down into end to end tests
-
-Explain what these tests test and why
+Test for url status code response
 
 ```
-Give an example
+python -m unittest
 ```
 
 ### And coding style tests
