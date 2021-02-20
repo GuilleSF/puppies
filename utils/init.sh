@@ -6,7 +6,7 @@ if [ ! -d "env" ]; then
     python3.9 -m venv env
 fi
 cd env
-if [ ! -d "env/bin"]; then
+if [ ! -d "env/bin" ]; then
 	echo --------------------
 	echo env/bin
 	echo --------------------
