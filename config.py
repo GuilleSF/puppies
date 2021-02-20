@@ -14,3 +14,9 @@ class ProductionConfig(Config):
 class DevelopmentConfig(Config):
     DEVELOPMENT = True
     DEBUG = True
+
+class TestConfig(Config):
+	DEBUG=True
+	CACHE_TYPE='null'
+	MAIL_SERVER='localhost'
+	
