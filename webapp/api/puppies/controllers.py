@@ -22,14 +22,6 @@ dog_fields = {
 }
 
 
-def classificate_image():
-    print("Classifying image")
-    return "Classifying image"
-
-
-def transform_image(dog_image):
-    print("Transforming image")
-    return classificate_image()
 
 
 class PuppiesApi(Resource):
