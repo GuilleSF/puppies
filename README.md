@@ -1,6 +1,6 @@
 # MarkDown file
 # Api for dogs recognition with Flask and Keras
-# version == 0.1a2
+## version == 
 #
 
 
@@ -12,7 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You must have Python 3 (3.9.1) and the next libraries:
+You must have Python 3 (3.8.5) and the next libraries:
 
 aniso8601==9.0.0
 autoenv==1.0.0
@@ -61,7 +61,7 @@ redis-server
 In other terminal
 
 ```
-python3.9 worker.py
+python3.8 worker.py
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
@@ -95,45 +95,10 @@ Give an example
 
 Add additional notes about how to deploy this on a live system
 
-## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
 * **Guillermo Nieto Barba** 
 
 
-
-## License
-
-
-<<Neuronal Network App>> Small neuronal in-vitro networks, analysis and simulation pure python application.
-Copyright (C) 2019  Guillermo Nieto Barba
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
- - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
