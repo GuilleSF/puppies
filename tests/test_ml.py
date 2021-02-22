@@ -1,5 +1,5 @@
 import unittest
-from webapp.api.puppies import make_breed_prediction, encode_decode_images, prepare_images
+from webapp.api.puppies import make_breed_prediction, encode_decode_images, prepare_imagescheck
 
 
 class TestURLs(unittest.TestCase):
