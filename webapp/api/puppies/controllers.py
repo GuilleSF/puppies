@@ -32,8 +32,7 @@ class PuppiesApi(Resource):
             print(breed_list, type(breed_list))
             print("Len: ", len(breed_list), " Shape: ", breed_list.shape)
             # job = q.enqueue_call(
-            # func=transform_image, args=(dog_image,), result_ttl=5000)
-            # transform-image
+            # func=make_breed_prediction, args=(dog_image,), result_ttl=5000)
             # calculate prob
             breed_list = None
             if not breed_list:

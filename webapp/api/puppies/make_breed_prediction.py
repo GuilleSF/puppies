@@ -1,4 +1,4 @@
-from .encode_decode_images import IMAGE_WIDTH, IMAGE_HEIGHT
+from .encode_decode_images import IMAGE_WIDTH, IMAGE_HEIGHT, base64_encode_image
 from .prepare_images import prepare_image
 from io import BytesIO
 from PIL import Image
