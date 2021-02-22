@@ -18,4 +18,3 @@ def create_app(object_name):
     api_create_module(app)
 
     return app
-    
