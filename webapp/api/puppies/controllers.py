@@ -22,26 +22,17 @@ dog_fields = {
 }
 
 
-def classificate_image():
-    print("Classifying image")
-    return "Classifying image"
-
-
-def transform_image(dog_image):
-    print("Transforming image")
-    return classificate_image()
-
-
 class PuppiesApi(Resource):
     @marshal_with(dog_fields)
     def post(self, dog_image=None):
         args = image_post_parser.parse_args(strict=True)
         dog_image = args['dog_image']
         if dog_image:
-            response = make_breed_prediction(dog_image)
-            return(response, type(response)), 200
+            breed_list = make_breed_prediction(dog_image)
+            print(breed_list, type(breed_list))
+            print("Len: ", len(breed_list), " Shape: ", breed_list.shape)
             # job = q.enqueue_call(
-                # func=transform_image, args=(dog_image,), result_ttl=5000)
+            # func=transform_image, args=(dog_image,), result_ttl=5000)
             # transform-image
             # calculate prob
             breed_list = None

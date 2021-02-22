@@ -1,9 +1,8 @@
-from encode_decode_image import IMAGE_WIDTH, IMAGE_HEIGHT
-from prepare_image import prepare_image
+from .encode_decode_images import IMAGE_WIDTH, IMAGE_HEIGHT
+from .prepare_images import prepare_image
 from io import BytesIO
 from PIL import Image
-from tensorflow.python.keras.applications import ResNet50
-
+from tensorflow.python.keras.applications.resnet import ResNet50
 
 
 def make_breed_prediction(image):
