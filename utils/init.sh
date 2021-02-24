@@ -1,27 +1,29 @@
 cd ..
+sudo apt-get install python3-pip
+pip3 install autoenv
+echo "source 'which activate.sh'" >> ~/.bashrc
+source ~/.bashrc
 if [ ! -d "env" ]; then
     echo --------------------
     echo Creating virtualenv
     echo --------------------
-    python3.9 -m venv env
+    python3 -m venv env
 fi
-cd env
-if [ ! -d "env/bin"]; then
+if [ -d "env/bin"]; then
 	echo --------------------
-	echo env/bin
+	echo env/env/bin
 	echo --------------------
-	source bin/activate
+	source env/bin/activate
 else
 	echo --------------------
 	echo env/Scripts
 	echo --------------------
-	source Scripts/activate
+	source env/Scripts/activate
 fi
-cd ..
 pip install -r requirements.txt
 
 echo --------------------
 echo env variables
 echo --------------------
 export FLASK_APP=main.py
-APP_SETTINGS="config.DevelopmentConfig"
+export APP_SETTINGS="config.DevelopmentConfig"
