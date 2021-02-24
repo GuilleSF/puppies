@@ -11,15 +11,6 @@ from .make_breed_prediction import make_breed_prediction
 
 q = Queue(connection=conn)
 
-nested_breed_fields = {
-    'breed': fields.String(),
-    'probability': fields.String()
-}
-
-dog_fields = {
-    'dog_breed': fields.Nested(nested_breed_fields),
-}
-
 
 class PuppiesApi(Resource):
     #@marshal_with(dog_fields)
@@ -27,12 +18,12 @@ class PuppiesApi(Resource):
         args = image_post_parser.parse_args(strict=True)
         dog_image = args['dog_image']
         if dog_image:
-            breed_list = make_breed_prediction(dog_image)
-            print(breed_list, type(breed_list))
-            print("Len: ", len(breed_list))
-            print(breed_list[0], "Tipo: ", type(breed_list[0]))
-            # job = q.enqueue_call(
-            # func=make_breed_prediction, args=(dog_image,), result_ttl=5000)
+            job = q.enqueue_call(func=make_breed_prediction,
+                                 args=(dog_image,), result_ttl=5000)
+            print(job.result, job.get_id())
+            while not job.is_finished:
+                pass
+            breed_list = job.result
             if not breed_list:
                 abort(404)
             return {'dog_breed': breed_list}
