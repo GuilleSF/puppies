@@ -13,31 +13,29 @@ q = Queue(connection=conn)
 
 nested_breed_fields = {
     'breed': fields.String(),
-    'probability': fields.Float()
+    'probability': fields.String()
 }
 
 dog_fields = {
-    'photo_id': fields.String(),
-    'breed': fields.List(fields.Nested(nested_breed_fields)),
+    'dog_breed': fields.Nested(nested_breed_fields),
 }
 
 
 class PuppiesApi(Resource):
-    @marshal_with(dog_fields)
+    #@marshal_with(dog_fields)
     def post(self, dog_image=None):
         args = image_post_parser.parse_args(strict=True)
         dog_image = args['dog_image']
         if dog_image:
             breed_list = make_breed_prediction(dog_image)
             print(breed_list, type(breed_list))
-            print("Len: ", len(breed_list), " Shape: ", breed_list.shape)
+            print("Len: ", len(breed_list))
+            print(breed_list[0], "Tipo: ", type(breed_list[0]))
             # job = q.enqueue_call(
             # func=make_breed_prediction, args=(dog_image,), result_ttl=5000)
-            # calculate prob
-            breed_list = None
             if not breed_list:
                 abort(404)
-            return breed_list
+            return {'dog_breed': breed_list}
         else:
             abort(400)
 
