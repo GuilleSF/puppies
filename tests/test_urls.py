@@ -2,6 +2,12 @@ import unittest
 import json
 from webapp import create_app
 from webapp.api import rest_api
+from pathlib import Path
+
+
+here = Path(__file__)
+english_setter_img_path = here.parent.parent / \
+    'utils/00e9ed3fab1d2032603d1a90e557976f.jpg'
 
 
 class TestURLs(unittest.TestCase):
@@ -17,8 +23,9 @@ class TestURLs(unittest.TestCase):
 
     def test_post_api_breed(self):
         """Test the POST localhost/api/breed return the correct status"""
-        file_path = '../utils/00e9ed3fab1d2032603d1a90e557976f.jpg'
-        file_obj = open(file_path, 'rb')
+        file_obj = open(english_setter_img_path, 'rb')
+        files = {'dog_image': file_obj}
+        result = self.client.post('/api/breed', data=files)
         assert result.status_code == 200
 
 

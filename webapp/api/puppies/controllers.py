@@ -15,13 +15,14 @@ q = Queue(connection=conn)
 class PuppiesApi(Resource):
     def post(self, dog_image=None):
         args = image_post_parser.parse_args(strict=True)
-        dog_image = args['dog_image']
+        dog_image = args['dog_image'].stream
         if dog_image:
             job = q.enqueue_call(func=make_breed_prediction,
-                                 args=(dog_image,), result_ttl=5000)
-            print(job.result, job.get_id())
+                                 args=(dog_image,), result_ttl=500)
             while not job.is_finished:
-                pass
+                status = job.get_status()
+                if status in ["failed"]:
+                    abort(503)
             breed_list = job.result
             if not breed_list:
                 abort(404)
