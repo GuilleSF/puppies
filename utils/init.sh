@@ -1,4 +1,3 @@
-cd ..
 sudo apt-get install python3-pip
 pip3 install autoenv
 echo "source 'which activate.sh'" >> ~/.bashrc

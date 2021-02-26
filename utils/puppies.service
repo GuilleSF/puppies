@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve flask application
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/home/root/puppies/
+Environment="PATH=/home/root/puppies/env/bin"
+ExecStart=/home/root/puppies/env/bin/gunicorn --config gunicorn_config.py wsgi:main
+
+[Install]
+WantedBy=multi-user.target
