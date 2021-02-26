@@ -9,7 +9,7 @@ if [ ! -d "env" ]; then
     echo --------------------
     python3 -m venv env
 fi
-if [ -d "env/bin"]; then
+if [ -d "env/bin" ]; then
 	echo --------------------
 	echo env/env/bin
 	echo --------------------
